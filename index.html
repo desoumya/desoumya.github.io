@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Soumya De — Personal Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0f172a;--card:#0b1220;--accent:#7c3aed;--muted:#9aa4b2;--glass:rgba(255,255,255,0.03)}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial; margin:0; background:linear-gradient(180deg,#071023 0%, #071a2a 100%); color:#e6eef8; -webkit-font-smoothing:antialiased}
+    .container{max-width:920px;margin:36px auto;padding:28px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); border-radius:14px; padding:22px; box-shadow:0 6px 30px rgba(2,6,23,0.6); border:1px solid rgba(255,255,255,0.03)}
+    .header{display:flex;gap:18px;align-items:center;justify-content:space-between}
+    .avatar{width:120px;height:120px;border-radius:12px;background:linear-gradient(135deg,#3b0764,#5b21b6);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:22px;box-shadow:0 4px 14px rgba(0,0,0,0.4)}
+    h1{margin:0;font-size:24px;letter-spacing:0.3px}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:18px}
+    .section{background:var(--card);padding:18px;border-radius:10px;margin-top:12px;transition:transform .2s ease, box-shadow .2s ease}
+    .section:hover{transform:translateY(-3px);box-shadow:0 6px 24px rgba(124,58,237,0.15)}
+    .section h2{margin:0 0 10px;font-size:18px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.05);padding-bottom:6px}
+    .kv{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed rgba(255,255,255,0.05)}
+    .kv:last-child{border-bottom:0}
+    .small{font-size:13px;color:var(--muted)}
+    .social-icons{display:flex;gap:16px;align-items:center;justify-content:center;margin-top:8px}
+    .social-icons a img{width:28px;height:28px;filter:brightness(0) invert(1);transition:transform .2s ease}
+    .social-icons a:hover img{transform:scale(1.1)}
+    .footer{margin-top:16px;text-align:center;color:var(--muted);font-size:13px}
+    @media(max-width:880px){.grid{grid-template-columns:1fr;}.avatar{width:96px;height:96px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="header">
+        <div class="avatar">
+            <img src="soumyade.jpeg" alt="Soumya De" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
+          </div>
+        <div style="flex:1;margin-left:10px">
+          <h1>Soumya De — Senior Engineer</h1>
+          <p class="lead">B.Tech (CSE) • Nagarro Software • Gurgaon</p>
+        </div>
+        <div style="text-align:right">
+          <div class="small">Age: 26 (as of 2025)</div>
+          <div class="small">DOB: 15 Oct 1999</div>
+          <div class="small" style="margin-top:8px">Location: Contai, East Midnapore, WB</div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div>
+          <div class="section" id="about">
+            <h2>About Me</h2>
+            <p class="small">Hi! I’m Soumya — a passionate tech professional who believes in living with purpose and warmth.
+                I love travelling, exploring new places, and meeting people from different walks of life.</br>
+                I genuinely care for those around me and find joy in small acts of kindness, deep conversations, and shared laughter.</br>
+                For me, success means growing both as a person and as someone who adds positivity to others’ lives.</p>
+            <div style="margin-top:10px">
+              <div class="kv"><div><strong>Zodiac</strong><div class="small">Scorpio</div></div><div class="small">Height: 5'11"</div></div>
+              <div class="kv"><div><strong>Caste</strong><div class="small">Tamboli</div></div><div class="small">Languages: English, Hindi, Bengali</div></div>
+              <div class="kv"><div><strong>Hobbies</strong><div class="small">Fitness, Travel, Photography</div></div></div>
+            </div>
+          </div>
+
+          <div class="section" id="family">
+            <h2>Family</h2>
+            <div class="kv"><div><strong>Father’s Name</strong><div class="small">Prabir Kumar De</div></div><div><strong>Mother’s Name</strong><div class="small">Minu De</div></div></div>
+            <div class="kv"><div><strong>Sister’s Name</strong><div class="small">Moumita De</div></div></div>
+          </div>
+
+          <div class="section" id="education">
+            <h2>Education</h2>
+            <div class="kv"><div><strong>Degree</strong><div class="small">B.Tech in Computer Science & Engineering</div></div><div class="small">College: Techno Main Salt Lake, Kolkata</div></div>
+          </div>
+
+          <div class="section" id="professional">
+            <h2>Professional</h2>
+            <div class="kv"><div><strong>Company</strong><div class="small">Nagarro Software</div></div><div class="small">Designation: Senior Engineer</div></div>
+            <div style="margin-top:8px" class="small">Office Location: Gurgaon, Haryana (Presently Work From Home)</div>
+          </div>
+        </div>
+
+        <aside>
+          <div class="section" style="display:flex;flex-direction:column;align-items:center;gap:12px">
+            <h2 style="width:100%">Contact & Social</h2>
+            <div style="width:100%;text-align:center">
+              <div class="social-icons">
+                <a href="tel:+918637385421" title="Call"><img src="https://cdn-icons-png.flaticon.com/512/159/159832.png" alt="Phone"></a>
+                <a href="https://www.linkedin.com/in/soumya-de-857321145/" target="_blank" title="LinkedIn"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"></a>
+                <a href="https://www.instagram.com/wanderlust_soumya/?hl=en" target="_blank" title="Instagram">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" width="28" height="28" style="filter:invert(1);">
+                  </a>                  
+                  
+              </div>
+              <div class="small" style="margin-top:10px">Phone: 8637385421 <br/> Email: work.soumyade@gmail.com</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="footer">Crafted with sincerity — presenting a glimpse of who I am. © Soumya De</div>
+    </div>
+  </div>
+</body>
+</html>
