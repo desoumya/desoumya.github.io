@@ -2,48 +2,283 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Soumya De — Personal Profile</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
   <style>
-    :root{--bg:#0f172a;--card:#0b1220;--accent:#7c3aed;--muted:#9aa4b2;--glass:rgba(255,255,255,0.03)}
-    *{box-sizing:border-box}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial; margin:0; background:linear-gradient(180deg,#071023 0%, #071a2a 100%); color:#e6eef8; -webkit-font-smoothing:antialiased}
-    .container{max-width:920px;margin:36px auto;padding:28px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); border-radius:14px; padding:22px; box-shadow:0 6px 30px rgba(2,6,23,0.6); border:1px solid rgba(255,255,255,0.03)}
-    .header{display:flex;gap:18px;align-items:center;justify-content:space-between}
-    .avatar{width:120px;height:120px;border-radius:12px;background:linear-gradient(135deg,#3b0764,#5b21b6);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:22px;box-shadow:0 4px 14px rgba(0,0,0,0.4)}
-    h1{margin:0;font-size:24px;letter-spacing:0.3px}
-    p.lead{margin:6px 0 0;color:var(--muted)}
-    .grid{display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:18px}
-    .section{background:var(--card);padding:18px;border-radius:10px;margin-top:12px;transition:transform .2s ease, box-shadow .2s ease}
-    .section:hover{transform:translateY(-3px);box-shadow:0 6px 24px rgba(124,58,237,0.15)}
-    .section h2{margin:0 0 10px;font-size:18px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.05);padding-bottom:6px}
-    .kv{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed rgba(255,255,255,0.05)}
-    .kv:last-child{border-bottom:0}
-    .small{font-size:13px;color:var(--muted)}
-    .social-icons{display:flex;gap:16px;align-items:center;justify-content:center;margin-top:8px}
-    .social-icons a img{width:28px;height:28px;filter:brightness(0) invert(1);transition:transform .2s ease}
-    .social-icons a:hover img{transform:scale(1.1)}
-    .footer{margin-top:16px;text-align:center;color:var(--muted);font-size:13px}
-    @media(max-width:880px){.grid{grid-template-columns:1fr;}.avatar{width:96px;height:96px}}
+    :root {
+      --bg1: #0c0f1a;
+      --bg2: #1a2233;
+      --card: rgba(255, 255, 255, 0.05);
+      --accent: #3BAEA0;
+      --muted: #a7b3c0;
+      --text: #f1f5f9;
+      --shadow: rgba(59, 174, 160, 0.25);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: linear-gradient(180deg, var(--bg1), var(--bg2));
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 940px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 15px;
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 14px;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 3px solid var(--accent);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h1 {
+      font-size: 26px;
+      color: var(--text);
+    }
+
+    p.lead {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .section {
+      background: rgba(255,255,255,0.03);
+      padding: 18px;
+      border-radius: 12px;
+      margin-top: 16px;
+      transition: all 0.25s ease;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .section:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 15px var(--shadow);
+    }
+
+    .section h2 {
+      color: var(--accent);
+      margin-bottom: 10px;
+      font-size: 18px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 5px;
+    }
+
+    .kv {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 6px 0;
+      border-bottom: 1px dashed rgba(255,255,255,0.05);
+    }
+
+    .small {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* GALLERY */
+    .gallery-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .gallery-container {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+    }
+
+    .gallery-container::-webkit-scrollbar { display: none; }
+
+    .gallery-container img {
+      width: calc(33.33% - 10px);
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-container img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px var(--shadow);
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(59, 174, 160, 0.2);
+      border: none;
+      color: var(--text);
+      font-size: 22px;
+      cursor: pointer;
+      padding: 8px 12px;
+      border-radius: 50%;
+      transition: background 0.3s ease;
+      z-index: 10;
+    }
+
+    .arrow:hover { background: var(--accent); color: white; }
+    .arrow.left { left: 8px; }
+    .arrow.right { right: 8px; }
+
+    /* CONTACT & SOCIAL */
+    .social-icons {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  transition: 0.3s ease;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+
+.social-icons a img {
+  width: 26px;
+  height: 26px;
+  filter: brightness(10) invert(1);
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: var(--accent);
+  transform: scale(1.1);
+  box-shadow: 0 0 12px var(--accent);
+}
+
+    .footer {
+      margin-top: 25px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* LIGHTBOX */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .lightbox.active { display: flex; }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.3);
+    }
+
+    .lightbox-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(59,174,160,0.3);
+      border: none;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+      padding: 8px 14px;
+      border-radius: 50%;
+      transition: 0.3s ease;
+      z-index: 10000;
+    }
+
+    .lightbox-arrow:hover { background: var(--accent); }
+    .lightbox-arrow.left { left: 40px; }
+    .lightbox-arrow.right { right: 40px; }
+
+    @media (max-width: 880px) {
+      .grid { grid-template-columns: 1fr; }
+      .header { flex-direction: column; text-align: center; }
+      .avatar { width: 100px; height: 100px; }
+      .gallery-container img { width: calc(50% - 10px); height: 140px; }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-container img { width: calc(100% - 10px); height: 140px; }
+    }
   </style>
 </head>
+
 <body>
   <div class="container">
     <div class="card">
       <div class="header">
-        <div class="avatar">
-            <img src="soumyade.jpeg" alt="Soumya De" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
-          </div>
-        <div style="flex:1;margin-left:10px">
+        <div class="avatar"><img src="soumyade.jpeg" alt="Soumya De" /></div>
+        <div>
           <h1>Soumya De — Senior Engineer</h1>
-          <p class="lead">B.Tech (CSE) • Nagarro Software • Gurgaon</p>
+          <p class="lead">Driven by passion • Guided by purpose • Rooted in kindness</p>
         </div>
-        <div style="text-align:right">
-          <div class="small">Age: 26 (as of 2025)</div>
-          <div class="small">DOB: 15 Oct 1999</div>
-          <div class="small" style="margin-top:8px">Location: Contai, East Midnapore, WB</div>
+        <div class="small" style="text-align:right;">
+          <div>Date of Birth: 15 Oct 1999</div>
+          <div style="margin-top:8px;">Residence: Contai, East Midnapore, WB</div>
         </div>
       </div>
 
@@ -51,55 +286,112 @@
         <div>
           <div class="section" id="about">
             <h2>About Me</h2>
-            <p class="small">Hi! I’m Soumya — a passionate tech professional who believes in living with purpose and warmth.
-                I love travelling, exploring new places, and meeting people from different walks of life.</br>
-                I genuinely care for those around me and find joy in small acts of kindness, deep conversations, and shared laughter.</br>
-                For me, success means growing both as a person and as someone who adds positivity to others’ lives.</p>
-            <div style="margin-top:10px">
-              <div class="kv"><div><strong>Zodiac</strong><div class="small">Scorpio</div></div><div class="small">Height: 5'11"</div></div>
-              <div class="kv"><div><strong>Caste</strong><div class="small">Tamboli</div></div><div class="small">Languages: English, Hindi, Bengali</div></div>
-              <div class="kv"><div><strong>Hobbies</strong><div class="small">Fitness, Travel, Photography</div></div></div>
-            </div>
+            <p class="small">
+              Hi! I’m Soumya — a passionate tech professional who believes in living with purpose and warmth.
+              I love travelling, exploring new places, and meeting people from different walks of life.
+              I genuinely care for those around me and find joy in small acts of kindness, deep conversations, and shared laughter.
+              For me, success means growing both as a person and as someone who adds positivity to others’ lives.
+            </p>
           </div>
 
           <div class="section" id="family">
             <h2>Family</h2>
-            <div class="kv"><div><strong>Father’s Name</strong><div class="small">Prabir Kumar De</div></div><div><strong>Mother’s Name</strong><div class="small">Minu De</div></div></div>
-            <div class="kv"><div><strong>Sister’s Name</strong><div class="small">Moumita De</div></div></div>
+            <div class="kv"><div><strong>Father</strong><div class="small">Prabir Kumar De</div></div><div><strong>Mother</strong><div class="small">Minu De</div></div></div>
+            <div class="kv"><div><strong>Sister</strong><div class="small">Moumita De</div></div></div>
           </div>
 
           <div class="section" id="education">
             <h2>Education</h2>
-            <div class="kv"><div><strong>Degree</strong><div class="small">B.Tech in Computer Science & Engineering</div></div><div class="small">College: Techno Main Salt Lake, Kolkata</div></div>
+            <div class="kv"><div><strong>Degree</strong><div class="small">B.Tech in Computer Science & Engineering</div></div><div class="small">Techno Main Salt Lake, Kolkata</div></div>
           </div>
 
           <div class="section" id="professional">
             <h2>Professional</h2>
-            <div class="kv"><div><strong>Company</strong><div class="small">Nagarro Software</div></div><div class="small">Designation: Senior Engineer</div></div>
-            <div style="margin-top:8px" class="small">Office Location: Gurgaon, Haryana (Presently Work From Home)</div>
+            <div class="kv"><div><strong>Company</strong><div class="small">Nagarro</div></div><div class="small">Designation: Senior Engineer</div></div>
+            <div class="small" style="margin-top:8px;">Location: Gurgaon, Haryana (Currently Work From Home)</div>
+          </div>
+
+          <div class="section" id="gallery">
+            <h2>Photo Gallery</h2>
+            <div class="gallery-wrapper">
+              <button class="arrow left" onclick="scrollGallery(-1)">&#10094;</button>
+              <div class="gallery-container" id="galleryContainer">
+                <img src="soumyade.jpeg" alt="Gallery 1" onclick="openLightbox(0)">
+                <img src="soumyade2.jpeg" alt="Gallery 2" onclick="openLightbox(1)">
+                <img src="soumyade3.jpeg" alt="Gallery 3" onclick="openLightbox(2)">
+                <img src="soumyade4.png" alt="Gallery 4" onclick="openLightbox(3)">
+                <img src="soumyade5.jpeg" alt="Gallery 5" onclick="openLightbox(4)">
+              </div>
+              <button class="arrow right" onclick="scrollGallery(1)">&#10095;</button>
+            </div>
           </div>
         </div>
 
         <aside>
-          <div class="section" style="display:flex;flex-direction:column;align-items:center;gap:12px">
-            <h2 style="width:100%">Contact & Social</h2>
-            <div style="width:100%;text-align:center">
-              <div class="social-icons">
-                <a href="tel:+918637385421" title="Call"><img src="https://cdn-icons-png.flaticon.com/512/159/159832.png" alt="Phone"></a>
-                <a href="https://www.linkedin.com/in/soumya-de-857321145/" target="_blank" title="LinkedIn"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"></a>
-                <a href="https://www.instagram.com/wanderlust_soumya/?hl=en" target="_blank" title="Instagram">
+            <div class="section" style="text-align:center;">
+                <h2>Contact & Social</h2>
+                <div class="social-icons">
+                  <a href="tel:+918637385421" title="Call">
+                    <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Phone" />
+                  </a>
+                  <a href="mailto:work.soumyade@gmail.com" title="Email"> <img src="https://img.icons8.com/ios-filled/50/ffffff/new-post.png" alt="Email" /> </a>
+                  <a href="https://www.linkedin.com/in/soumya-de-857321145/" target="_blank" title="LinkedIn"> <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" /> </a>
+                  <a href="https://www.instagram.com/wanderlust_soumya/?hl=en" target="_blank" title="Instagram">
                     <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" width="28" height="28" style="filter:invert(1);">
-                  </a>                  
-                  
+                  </a>   
+                </div>
               </div>
-              <div class="small" style="margin-top:10px">Phone: 8637385421 <br/> Email: work.soumyade@gmail.com</div>
-            </div>
-          </div>
-        </aside>
-      </div>
+            </aside>
+              
 
-      <div class="footer">Crafted with sincerity — presenting a glimpse of who I am. © Soumya De</div>
+      <div class="footer">🌙 Crafted with sincerity — a glimpse of who I am. © Soumya De</div>
     </div>
   </div>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox-arrow left" onclick="changePhoto(-1)">&#10094;</button>
+    <img id="lightboxImg" src="" alt="Expanded View">
+    <button class="lightbox-arrow right" onclick="changePhoto(1)">&#10095;</button>
+  </div>
+
+  <script>
+    const images = [
+      "soumyade.jpeg", "soumyade2.jpeg", "soumyade3.jpeg", "soumyade4.png", "soumyade5.jpeg"
+    ];
+    let currentIndex = 0;
+
+    function scrollGallery(direction) {
+      const container = document.getElementById("galleryContainer");
+      const scrollAmount = container.clientWidth * 0.9;
+      container.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
+    }
+
+    function openLightbox(index) {
+      currentIndex = index;
+      const lightbox = document.getElementById("lightbox");
+      document.getElementById("lightboxImg").src = images[index];
+      lightbox.classList.add("active");
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").classList.remove("active");
+    }
+
+    function changePhoto(direction) {
+      currentIndex = (currentIndex + direction + images.length) % images.length;
+      document.getElementById("lightboxImg").src = images[currentIndex];
+    }
+
+    document.getElementById("lightbox").addEventListener("click", (e) => {
+      if (e.target.id === "lightbox") closeLightbox();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight") changePhoto(1);
+      if (e.key === "ArrowLeft") changePhoto(-1);
+    });
+  </script>
 </body>
 </html>
